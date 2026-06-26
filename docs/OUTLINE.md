@@ -122,6 +122,6 @@ In this model:
 
 Algorithms such as **Dijkstra’s shortest-path algorithm** and **A\* search** provide the mathematical foundation for route optimization, while adaptive systems update edge weights as traffic conditions change.
 
-- **Dijkstra’s algorithm:** computes shortest paths from a source node when edge costs are nonnegative.
+- **Djkstra’s algorithm:** computes shortest paths from a source node when edge costs are nonnegative.
 - **A\* search:** improves goal-directed search by adding a heuristic estimate of remaining cost.
 - **Dynamic edge weights:** road costs change when accidents, congestion, weather, or signal delays occur.
