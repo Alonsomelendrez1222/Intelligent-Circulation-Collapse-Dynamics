@@ -163,7 +163,7 @@ Im(s)\neq 0 \Rightarrow \text{oscillatory waves}
 
 ## 7. Rayleigh-Plateau Analogy
 
-The Rayleigh-Plateau instability is valuable as a conceptual analogy because it shows how small perturbations in a continuous stream can either decay or amplify depending on system parameters. In the project, this analogy should support the intuition of instability, while the traffic-specific equations should remain based on conservation of vehicles, flow-density relationships, and network dynamics.
+The Rayleigh-Plateau instability is valuable as a conceptual analogy because it shows how small perturbations in a continuous stream can either decay or amplify depending on system parameters. Within the project, this analogy should support the intuition of instability, while the traffic-specific equations should remain based on conservation of vehicles, flow-density relationships, and network dynamics.
 
 
 ---
