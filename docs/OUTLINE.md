@@ -130,7 +130,7 @@ Algorithms such as **Dijkstra’s shortest-path algorithm** and **A\* search** p
 
 ## 6. PDE Model for Continuous-Flow Instability
 
-The second technical section should introduce continuous traffic flow using a conservation-law model such as the Lighthill-Whitham-Richards framework. This section can still use a fluid analogy, but the analogy should be tied to traffic density waves instead of directly claiming that traffic behaves exactly like a liquid jet.
+The second technical section should introduce continuous traffic flow using a conservation-law model such as the Lighthill-Whitham-Richards framework. 
 
 **Stable regime:** Small perturbations decay, and density returns toward equilibrium.
 
@@ -158,7 +158,6 @@ Re(s)>0 \Rightarrow \text{perturbation grows}
 Im(s)\neq 0 \Rightarrow \text{oscillatory waves}
 ]
 
-**Annotation:** Rayleigh-Plateau can be used as an analogy for perturbation growth, but the core traffic model should be LWR or another established traffic-flow model. This keeps the project academically defensible.
 
 ---
 
@@ -166,11 +165,6 @@ Im(s)\neq 0 \Rightarrow \text{oscillatory waves}
 
 The Rayleigh-Plateau instability is valuable as a conceptual analogy because it shows how small perturbations in a continuous stream can either decay or amplify depending on system parameters. In the project, this analogy should support the intuition of instability, while the traffic-specific equations should remain based on conservation of vehicles, flow-density relationships, and network dynamics.
 
-Use the analogy to explain perturbation growth.
-
-Avoid claiming that surface tension directly exists in traffic. Instead, identify the traffic equivalent as interaction pressure, braking response, capacity limits, and driver reaction delays.
-
-Connect the analogy to stop-and-go waves: disturbances that appear small locally can propagate and amplify across the system.
 
 ---
 
