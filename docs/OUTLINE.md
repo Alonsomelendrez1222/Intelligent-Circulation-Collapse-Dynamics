@@ -110,7 +110,8 @@ Even when geometry is balanced, disturbances such as accidents, lane closures, w
 
 ---
 
-## 5. Smart Routing and Shortest-Path Algorithms
+## 5. Smart Routing and Shortest-Path Algorithms: 
+The proposed framework can be viewed as a preliminary intelligence layer for a future hybrid decentralized processing architecture. In this system, self-learning algorithms, artificial intelligence, and LiDAR sensing would be integrated to form the cognitive core of the urban circulation system, allowing the network to perceive traffic conditions, interpret instability, and coordinate adaptive responses across distributed control nodes.
 
 This section explains that GPS and modern traffic systems do not merely “know the roads”; they compute routes over a graph-based representation of the transportation network.
 
@@ -164,7 +165,6 @@ Im(s)\neq 0 \Rightarrow \text{oscillatory waves}
 ## 7. Rayleigh-Plateau Analogy
 
 The Rayleigh-Plateau instability is valuable as a conceptual analogy because it shows how small perturbations in a continuous stream can either decay or amplify depending on system parameters. Within the project, this analogy should support the intuition of instability, while the traffic-specific equations should remain based on conservation of vehicles, flow-density relationships, and network dynamics.
-
 
 ---
 
