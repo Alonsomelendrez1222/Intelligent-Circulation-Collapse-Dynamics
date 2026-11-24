@@ -20,6 +20,37 @@ Run `python experiment.py` from this directory to compare the median local condi
 
 For the 168 primes through 1000, the median was 2.9413. Across 200 seeded shuffles the medians ranged from 2.5455 to 3.8562, with median 3.0419. The observed value lies inside that range.
 
+## Generalized window criterion and a falsifiable next-prime test
+
+### Can the observables distinguish the candidate gaps?
+
+Let $\mathbf y(x)$ be the chosen measurements, for example normalized wave displacement and slope. Let $J_x$ be their Jacobian with respect to the phase vector. A cutoff such as $\kappa_2(J_x)<10$ describes relative sensitivity across directions. Even $J=0.001I$ has condition number one, so a condition-number cutoff alone gives no minimum detectable change.
+
+Specify a set $\mathcal D_x$ of perturbations at the smallest scientifically relevant size in each direction of interest. Choose a positive-definite uncertainty matrix $\Sigma_x$ for the measurements and a separation threshold $\tau>0$. A local observability window satisfies
+
+$
+\inf_{\delta\in\mathcal D_x}\left\|\Sigma_x^{-1/2}J_x\delta\right\|_2\geq\tau .
+$
+
+State how the uncertainty scale was chosen. In deterministic calculations, declared tolerances for displacement and slope can supply the diagonal standard deviations. The threshold then expresses separation in tolerance units.
+
+Starting at a prime $p$, each proposed gap $h$ advances the phases together by $\log(1+h/p)(\gamma_1,\ldots,\gamma_m)$. For finite candidate gaps $a,b$, use their actual measurement difference, which also detects similar signatures after phase wrapping:
+
+$
+d_p(a,b)=\left\|\Sigma_p^{-1/2}\big[\mathbf y(p+a)-\mathbf y(p+b)\big]\right\|_2 .
+$
+
+For example, at $p=101$, compare offsets 2 and 6 by evaluating the same observables at 103 and 107. If their distance exceeds $\tau$, the signatures are distinguishable. The distance is symmetric, so it gives no preference between the candidates. A prediction requires a separate ranking rule.
+
+### Does the phase information help locate the next prime?
+
+1. Specify an earlier training range and a disjoint, later evaluation range. On the earlier range choose a search horizon, candidate exclusions, frequencies, scaling, threshold, scoring rule, tie rule, and guess budget $K$. Freeze these choices before evaluation.
+2. At each evaluation prime $p_n$, rank candidate offsets using only information available through $p_n$ and features computable at proposed locations without testing their primality. One reproducible comparison is to learn next-gap frequencies by offset on the training range, then test whether adding candidate phase features to that same baseline improves its ranking.
+3. Give both methods the same horizon, exclusions and budget. Record their top $K$ guesses before revealing $p_{n+1}$. Count gaps beyond the horizon as misses. If the window permits abstention, score the baseline on the same issued cases and also report results over all eligible cases, counting abstentions as misses.
+4. Report the evaluation bounds, number of cases, coverage, hit rates, paired hit-rate difference, and uncertainty estimate with its assumptions. Publish misses alongside hits. A zero or negative difference fails to support a predictive advantage for the tested configuration. Changes motivated by the results require a fresh evaluation range.
+
+The existing Python experiment compares conditioning at known primes with shuffled-gap controls. The forward test above is an open protocol. Readers extending it can change one element at a time and share the exact configuration, code, and held-out results.
+
 ## Possible extension to neural electrical signals
 For a spike train, pair each spike's event index with its recorded time. A separate experiment could compare phase-recovery error on synthetic spike trains with known generating phases, then compare recorded spike trains with interval-shuffled controls. Time units, phase frequencies, and a positive reference time for logarithms must be defined for those data. No neural recordings were analyzed here. Whether such coordinates capture anything about information transfer between neurons remains an open question.
 
